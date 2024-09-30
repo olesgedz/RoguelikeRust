@@ -8,9 +8,19 @@ pub enum TileType {
     Floor,
 }
 
-pub fn xy_idx(x: i32, y: i32) -> usize {
-    (y as usize * 80) + x as usize
+pub struct Map {
+    pub tile : Vec<TileType>,
+    pub rooms : Vec<Rect>,
+    pub width : i32,
+    pub height : i32
 }
+
+impl Map {
+    pub fn xy_idx(&self, x: i32, y: i32) -> usize {
+        (y as usize * self.) + x as usize
+    }
+}
+
 
 /// Makes a map with solid boundaries and 400 randomly placed walls. No guarantees that it won't
 /// look awful.
